@@ -1,0 +1,26 @@
+{
+  "name": "customer-save-logger",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@adobe/aio-commerce-lib-app": "^2.0.0",
+    "@adobe/aio-commerce-lib-config": "1.8.0",
+    "@adobe/aio-commerce-sdk": "^2.0.0",
+    "@ljharb/tsconfig": "^0.2.3",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@tsconfig/bases": "^1.0.28"
+  },
+  "description": "Processes Adobe Commerce customer save events and logs the processed customer details for verification.",
+  "scripts": {
+    "test": "node --test src/commerce-extensibility-1/actions/process-customer/index.test.js",
+    "typecheck:actions": "tsc --noEmit -p tsconfig.json",
+    "typecheck": "npm run typecheck:actions",
+    "postinstall": "npx aio-commerce-lib-app hooks postinstall"
+  },
+  "imports": {
+    "#app.commerce.config": "./src/commerce-extensibility-1/.generated/app.commerce.config.js"
+  }
+}

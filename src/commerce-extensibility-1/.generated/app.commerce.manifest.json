@@ -1,0 +1,43 @@
+{
+  "eventing": {
+    "commerce": [
+      {
+        "events": [
+          {
+            "description": "Processes a customer after its save commits in Adobe Commerce.",
+            "fields": [
+              {
+                "name": "id"
+              },
+              {
+                "name": "email"
+              },
+              {
+                "name": "firstname"
+              },
+              {
+                "name": "lastname"
+              }
+            ],
+            "label": "Customer Save Committed",
+            "name": "observer.customer_save_commit_after",
+            "runtimeActions": [
+              "my-app/process-customer"
+            ]
+          }
+        ],
+        "provider": {
+          "description": "Receives committed customer saves for processing.",
+          "label": "Commerce Customer Events"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "description": "Processes Adobe Commerce customer save events and logs the processed customer details for verification.",
+    "displayName": "Customer Save Logger",
+    "id": "customer-save-logger",
+    "upgradeMode": "manual",
+    "version": "1.0.0"
+  }
+}
